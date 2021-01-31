@@ -5,10 +5,10 @@ import { GlobalStyle } from './style';
 import { IconFont } from './statics/iconfont/iconfont';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <div>
     <App />
     <GlobalStyle />
     <IconFont />
-  </React.StrictMode>,
+  </div>,
   document.getElementById('root')
 );
