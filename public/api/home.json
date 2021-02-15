@@ -1,0 +1,23 @@
+{
+  "sucess": true,
+  "data": {
+    "articleList": [{
+      "id": 1,
+      "title": "谈谈滑动页面时的吸顶内容",
+      "desc": "背景 最近在优化一些产品的页面，某些页面用户在往上滑动的时候，想要做一些更符合用户使用场景的内容调整，在做之前，大概分析了下一些主流产品的做法",
+      "imgUrl": "https://upload-images.jianshu.io/upload_images/1222654-af04f81879cb6d4d.png?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
+    }, {
+      "id": 2,
+      "title": "百万字日更完成后，是什么感觉呢",
+      "desc": "没感觉。 感觉水平差的还很远。 比起码字狂人来说，简直不算不什么。 但对于我们每天最多写千把字的写手来说，百万字的确是一个里碑的意义转折点。 前...",
+      "imgUrl": ""
+    }],
+    "recommendList": [{
+      "id": 1,
+      "imgUrl": "https://cdn2.jianshu.io/assets/web/banner-s-daily-e6f6601abc495573ad37f2532468186f.png"
+    }, {
+      "id": 2,
+      "imgUrl": "https://cdn2.jianshu.io/assets/web/banner-s-club-aa8bdf19f8cf729a759da42e4a96f366.png"
+    }]
+  }
+}

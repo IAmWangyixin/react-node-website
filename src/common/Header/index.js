@@ -19,6 +19,7 @@ import {
   SearchInfoList,
   SearchWrapper
 } from './style';
+import { Link } from 'react-router-dom';
 
 /* const getListArea = (show) => {
   if(show) {
@@ -81,7 +82,7 @@ const Header = (props) => (
 
 class Header extends Component {
   getListArea(focused) {
-    const {list, page, totalPage, handleMouseEnter, handleMounseLeave, mouseIn, handleChangePage} = this.props;
+    const {list, page, totalPage, handleMouseEnter, handleMouseLeave, mouseIn, handleChangePage} = this.props;
     const newList = list.toJS();
     const pageList = [];
     if(newList.length) {
@@ -97,7 +98,7 @@ class Header extends Component {
       return (
         <SearchInfo 
           onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMounseLeave}
+          onMouseLeave={handleMouseLeave}
           >
           <SearchInfoTitle>
             热门搜索
@@ -114,16 +115,18 @@ class Header extends Component {
             }
           </SearchInfoList>
         </SearchInfo>
-      )
+      );
     } else {
-      return null
+      return null;
     }
   }
   render() {
-    const {focused, handleInputBlur, handleInputFocus} = this.props;
+    const {focused, handleInputBlur, handleInputFocus, list} = this.props;
     return (
       <HeaderWrapper>
-        <Logo />
+        <Link to='/'>
+          <Logo />
+        </Link>
         <Nav>
           <NavItem className="left active">首页</NavItem>
           <NavItem className="left">下载</NavItem>
@@ -135,7 +138,7 @@ class Header extends Component {
             >
               <NavSearch
                 className={focused ? 'focused' : '' }
-                onFocus={handleInputFocus}
+                onFocus={() => handleInputFocus(list)}
                 onBlur={handleInputBlur}
               ></NavSearch>
             </CSSTransition>
@@ -155,7 +158,7 @@ class Header extends Component {
           <Button className="reg">注册</Button>
         </Addition>
       </HeaderWrapper>
-    )
+    );
   }
 }
 
@@ -166,13 +169,13 @@ const mapStateToProps = (state) => {
     page: state.getIn(['header', 'page']),
     totalPage: state.getIn(['header', 'totalPage']),
     mouseIn: state.getIn(['header', 'mouseIn'])
-  }
-}
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleInputFocus() {
-      dispatch(actionCreators.getList());
+    handleInputFocus(list) {
+      (list.size === 0) && dispatch(actionCreators.getList());
       dispatch(actionCreators.getSearchFocus());
     },
     handleInputBlur() {
@@ -199,7 +202,7 @@ const mapDispatchToProps = (dispatch) => {
       }
       // dispatch(actionCreators.changePage());
     },
-  }
-}
+  };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header)
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

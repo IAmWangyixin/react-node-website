@@ -5,3 +5,9 @@
 facebook
 immutable.js
 immutable对象
+
+
+## 单页应用
+网站只加载一次html
+当使用a标签跳转时，会再次加载html，这个动作很耗时且没有必要。
+使用react-router-dom 中的link代替a标签。

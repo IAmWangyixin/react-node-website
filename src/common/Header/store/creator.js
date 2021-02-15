@@ -5,7 +5,7 @@ const changeList = (data) => ({
   type: constants.CHANGE_LIST,
   data: fromJS(data),
   totalPage: Math.ceil(data.length / 10)
-})
+});
 
 export const getSearchFocus = () => ({
   type: constants.SEARCH_FOCUS
@@ -26,22 +26,22 @@ export const getList= () => {
         console.log('error')
       })
   }
-}
+};
 
 export const getMouseEnter = () => {
   return {
     type: constants.MOUSE_ENTER
-  }
-}
+  };
+};
 export const getMouseLeave = () => {
   return {
     type: constants.MOUSE_LEAVE
-  }
-}
+  };
+};
 
 export const changePage = (page) => {
   return {
     type: constants.CHANGE_PAGE,
     page
-  }
-}
+  };
+};
