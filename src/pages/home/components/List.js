@@ -16,7 +16,7 @@ const List = (props) => {
         list.map((item, index) => {
           const hasImgUrl = item.get('imgUrl') !== '';
           return (
-            <Link key={index} to='/detail'>
+            <Link key={index} to={`/detail/${item.get('id')}`}>
               <ListItem>
                 {
                   hasImgUrl ? <img alt='' className="pic" src={item.get('imgUrl')}/> : '' 
